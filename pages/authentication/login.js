@@ -26,7 +26,8 @@ const Login = () => {
       <Button variant="contained" sx={{bgcolor:'#f50057'}} endIcon={<LoginIcon />}>
         Login
       </Button>
-        </div>
+      <div className={styles.signup}>New User? SignUp here!</div>
+    </div>
     </div>
   )
 }
