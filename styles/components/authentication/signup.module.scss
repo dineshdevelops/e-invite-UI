@@ -1,0 +1,15 @@
+.signUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .title{
+        font-size: 25px;
+    }
+    .signUpForm{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
