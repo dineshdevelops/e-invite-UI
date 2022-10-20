@@ -1,0 +1,43 @@
+.weddingContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    .name{
+        font-family: 'Courgette', cursive;
+        font-size: 30px;
+        color: #E41B17;
+    }
+    .loveStory{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title{
+            font-family: 'Kalam', cursive;
+            font-size: 30px;
+            color: #E55451;
+        }
+    }
+    .gallery{
+        text-align: center;
+        .title{
+            font-family: 'Kalam', cursive;
+            font-size: 30px;
+            color: #E55451;
+        }
+    }
+    .events{
+        .title{
+        text-align: center;
+        font-family: 'Kalam', cursive;
+        font-size: 30px;
+        color: #E55451;
+        }
+        .eventsList{
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+        }
+    }
+}
