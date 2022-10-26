@@ -11,8 +11,10 @@ import BrideInfo from '../../components/WeddingComponent/creator/BrideInfo';
 import LoveStory from '../../components/WeddingComponent/creator/LoveStory';
 import Gallery from '../../components/WeddingComponent/creator/Gallery';
 import Events from '../../components/WeddingComponent/creator/Events';
+import { useRouter } from 'next/router';
 
 const Creator = () => {
+  const router = useRouter();
     const steps=[
         'Groom Info',
         'Bride Info',
@@ -60,6 +62,14 @@ const Creator = () => {
                 return(<Events weddingData={weddingData} setWeddingData={setWeddingData} />)
         }
     }
+    React.useEffect(()=>{
+      const userId = localStorage.getItem('userId');
+      const token = localStorage.getItem('token');
+      if(!userId || !token){
+        router.push('/authentication/login')
+      }
+      console.log("UseEffect called at Creator page")
+    },[localStorage.getItem('token'),localStorage.getItem('userId')])
   return (
     <div className={styles.creator}>
         <Stepper activeStep={creatorPage} alternativeLabel>

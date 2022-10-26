@@ -6,11 +6,12 @@ import Button from '@mui/material/Button';
 import LoginIcon from '@mui/icons-material/Login';
 import axios from 'axios';
 import SnackBarComponent from '../../components/util/SnackBarComponent';
+import { useRouter } from 'next/router';
 
 const Login = () => {
   const [isLoggedIn,setIsLoggedIn] = React.useState();
   const [invalidCredentials,setInvalidCredentials] = React.useState();
-
+  const router = useRouter();
   const [loginData,setLoginData]=React.useState({
     email:"",
     password:""
@@ -30,11 +31,20 @@ const Login = () => {
         const {_id,token}=res.data;
         localStorage.setItem('userId',_id);
         localStorage.setItem('token',token);
+        router.push('/wedding/creator')
       }
     } catch (error) {
       setInvalidCredentials(true)
     }
   }
+  // ! If user is already LoggedIn redirect to Creator Page
+  React.useEffect(()=>{
+    const userId = localStorage.getItem('userId');
+    const token = localStorage.getItem('token');
+    if(userId && token){
+      router.push('/wedding/creator')
+    }
+  })
   return (
     <div className={styles.login}>
         <div className={styles.title}>Login</div>
