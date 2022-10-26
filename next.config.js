@@ -6,6 +6,9 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
   },
   reactStrictMode: true,
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
   swcMinify: true,
 };
 
