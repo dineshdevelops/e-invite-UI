@@ -4,7 +4,7 @@ import Image from 'next/Image';
 import gallery1 from "../../public/assets/wedding/gallery1.jpg"
 import gallery2 from "../../public/assets/wedding/gallery2.jpg"
 import gallery3 from "../../public/assets/wedding/gallery3.jpg"
-const Gallery = () => {
+const Gallery = ({weddingData,setWeddingData}) => {
   return (
     <div className={styles.gallery}>
           <div className={styles.galleryImages}>

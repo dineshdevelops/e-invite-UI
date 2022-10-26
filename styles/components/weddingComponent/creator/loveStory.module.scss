@@ -1,0 +1,11 @@
+.loveStory{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    .icon{
+        color: red;
+        font-size: 200px;
+    }
+}
