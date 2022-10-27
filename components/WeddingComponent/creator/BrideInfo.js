@@ -31,7 +31,7 @@ const BrideInfo = ({weddingData,setWeddingData}) => {
   }
   return (
     <div className={styles.brideInfo}>
-        <Image src={nobita} width='150' height='150' alt="profileImage" />
+        <Image src={weddingData.brideDetails.bridePhoto} width='150' height='150' alt="profileImage" />
         <Button variant="contained" component="label" endIcon={<PhotoCameraIcon />} name="bridePhoto" sx={{bgcolor:'#f50057'}}>
           Upload Image
           <input hidden accept="image/*" multiple type="file" name="bridePhoto" onChange={uploadBridePhoto} />

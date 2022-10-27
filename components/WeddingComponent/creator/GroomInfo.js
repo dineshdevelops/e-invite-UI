@@ -26,16 +26,21 @@ const GroomInfo = ({weddingData,setWeddingData}) => {
     const file = e.target.files[0];
     const formData = new FormData();
     formData.append("photo",file);
-    const res= await axios.post("http://localhost:8083/api/cloudinary/uploadImage",formData);
-    setGroomPhotoUrl(res.data.secure_url);
-    weddingData.groomDetails.groomPhoto=groomPhotoUrl;
-    console.log(groomPhotoUrl)
-    setWeddingData(weddingData);
-    console.log(weddingData)
+    try {
+      const res= await axios.post("http://localhost:8083/api/cloudinary/uploadImage",formData);
+      setGroomPhotoUrl(res.data.secure_url);
+      weddingData.groomDetails.groomPhoto=groomPhotoUrl;
+      console.log(groomPhotoUrl)
+      setWeddingData(weddingData);
+      console.log(weddingData)
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
   return (
     <div className={styles.groomInfo}>
-        <Image src={nobita} width='150' height='150' alt="profileImage"  />
+        <Image src={weddingData.groomDetails.groomPhoto} width='150' height='150' alt="profileImage"  />
         <Button variant="contained" component="label" endIcon={<PhotoCameraIcon />} name="groomPhoto"  sx={{bgcolor:'#f50057'}}>
           Upload Image
           <input hidden accept="image/*" multiple type="file" name="groomPhoto" onChange={uploadGroomPhoto} />

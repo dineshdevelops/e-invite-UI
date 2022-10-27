@@ -24,16 +24,16 @@ const Creator = () => {
     ];
     // !Wedding Data which has to be passed across Stepper components
     const [weddingData,setWeddingData]=React.useState({
-      userId:"",
+      userId:localStorage.getItem('userId'),
       groomDetails:{
         groomName:"",
         groomDetails:"",
-        groomPhoto:""
+        groomPhoto:"https://res.cloudinary.com/dln6m1ts5/image/upload/v1666800337/DummyImage/dummyGroom_cfljwm.png"
       },
       brideDetails:{
         brideName:"",
         brideDetails:"",
-        bridePhoto:""
+        bridePhoto:"https://res.cloudinary.com/dln6m1ts5/image/upload/v1666800338/DummyImage/dummyBride_a97u15.png"
       },
       loveStory:"",
       gallery:[],
