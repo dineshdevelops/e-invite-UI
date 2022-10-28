@@ -5,8 +5,10 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const SignUp = () => {
+  const router = useRouter();
   const [signUpData,setSignUpData]=React.useState({
       name: "",
       email: "",
@@ -22,8 +24,20 @@ const SignUp = () => {
     })
   }
   const handleSubmit = async()=>{
-    const res = await axios.post('http://localhost:8083/api/authentication/signUp',signUpData);
-    console.log(res);
+    let notifyMessage;
+    try{
+      const res = await axios.post('http://localhost:8083/api/authentication/signUp',signUpData);
+      if(res.status === 200){
+        notifyMessage = res.data.message;
+        console.log(res)
+        router.push("notify/verify/"+notifyMessage)
+      }
+    }
+    catch(error){
+      console.log(error);
+      notifyMessage = "SignUp Error Try to signUp again";
+      router.push("notify/error/"+notifyMessage)
+    }
   }
   return (
     <div className={styles.signUp}>

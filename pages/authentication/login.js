@@ -7,6 +7,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import axios from 'axios';
 import SnackBarComponent from '../../components/util/SnackBarComponent';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Login = () => {
   const [isLoggedIn,setIsLoggedIn] = React.useState();
@@ -69,7 +70,7 @@ const Login = () => {
       <Button variant="contained" sx={{bgcolor:'#f50057'}} endIcon={<LoginIcon />} onClick={handleSubmit} >
         Login
       </Button>
-      <div className={styles.signup}>New User? SignUp here!</div>
+      <div className={styles.signUp}><Link href="/authentication">New User? SignUp here!</Link></div>
     </div>
     </div>
   )
