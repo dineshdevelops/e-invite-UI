@@ -3,6 +3,7 @@ import React from 'react'
 import MailLockIcon from '@mui/icons-material/MailLock';
 import ErrorIcon from '@mui/icons-material/Error';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import styles from "../../../styles/pages/notify/notify.module.scss"
 
 const NotifyType = () => {
@@ -16,6 +17,8 @@ const NotifyType = () => {
             return <CheckCircleIcon className={styles.icon} style={{color:"green"}}/>
           case "error":
               return <ErrorIcon className={styles.icon} style={{color:"red"}} />
+          case "approve":
+              return <HourglassBottomIcon className={styles.icon} style={{color:"#ff9900"}} />
           default:
             return <ErrorIcon className={styles.icon} style={{color:"red"}} />
         }

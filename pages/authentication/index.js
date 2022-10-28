@@ -23,7 +23,7 @@ const SignUp = () => {
   }
   const handleSubmit = async()=>{
     const res = await axios.post('http://localhost:8083/api/authentication/signUp',signUpData);
-    console.log(res)
+    console.log(res);
   }
   return (
     <div className={styles.signUp}>
