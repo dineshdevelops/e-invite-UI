@@ -17,7 +17,6 @@ const GroomInfo = ({weddingData,setWeddingData}) => {
       return newGroomInfo
     })
   }
-  const [groomPhotoUrl,setGroomPhotoUrl] = React.useState("");
 
   const uploadGroomPhoto = async(e)=>{
     console.log("Upload Groom Photo");
@@ -28,10 +27,8 @@ const GroomInfo = ({weddingData,setWeddingData}) => {
     formData.append("photo",file);
     try {
       const res= await axios.post("http://localhost:8083/api/cloudinary/uploadImage",formData);
-      setGroomPhotoUrl(res.data.secure_url);
-      weddingData.groomDetails.groomPhoto=groomPhotoUrl;
-      console.log(groomPhotoUrl)
-      setWeddingData(weddingData);
+      const groomPhotoUrl=res.data.secure_url;
+      setWeddingData({...weddingData,groomDetails:{groomPhoto:groomPhotoUrl}});
       console.log(weddingData)
     } catch (error) {
       console.log(error)

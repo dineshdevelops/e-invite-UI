@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import axios from "axios"
 
 const BrideInfo = ({weddingData,setWeddingData}) => {
-  const [bridePhotoUrl,setBridePhotoUrl] = React.useState("");
+
   const handleChange=(event)=>{
     const {name,value}=event.target;
     setWeddingData((prevInfo)=>{
@@ -23,11 +23,8 @@ const BrideInfo = ({weddingData,setWeddingData}) => {
     const formData = new FormData();
     formData.append("photo",file);
     const res= await axios.post("http://localhost:8083/api/cloudinary/uploadImage",formData);
-    setBridePhotoUrl(res.data.secure_url);
-    weddingData.brideDetails.bridePhoto=bridePhotoUrl;
-    setWeddingData(weddingData);
-    console.log(bridePhotoUrl);
-    console.log(weddingData)
+    const bridePhotoUrl=res.data.secure_url;
+    setWeddingData({...weddingData,brideDetails:{bridePhoto:bridePhotoUrl}});
   }
   return (
     <div className={styles.brideInfo}>
