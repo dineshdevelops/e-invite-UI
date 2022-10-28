@@ -12,6 +12,7 @@ import LoveStory from '../../components/WeddingComponent/creator/LoveStory';
 import Gallery from '../../components/WeddingComponent/creator/Gallery';
 import Events from '../../components/WeddingComponent/creator/Events';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const Creator = () => {
   const router = useRouter();
@@ -42,11 +43,28 @@ const Creator = () => {
     const [creatorPage,setCreatorPage] = React.useState(0);
     const nextPage = ()=>{
         setCreatorPage((currPage)=>creatorPage+1)
-        console.log(weddingData);
+        // console.log(weddingData);
+        if(creatorPage===4){
+          handleSubmit();
+        }
     }
     const previousPage=()=>{
         setCreatorPage((currPage)=>creatorPage-1);
         console.log(creatorPage);
+    }
+    const handleSubmit=async()=>{
+      console.log(weddingData);
+      try {
+        const res =  await axios.post('http://localhost:8083/api/wedding/postCreator',weddingData);
+        const notifyMessage = res.data.message;
+        if(res.status===200){
+          router.push("/notify/approve/"+notifyMessage)
+        }
+      } catch (error) {
+        console.log(error)
+        notifyMessage = "Error Try to contact ALIKA";
+      router.push("notify/error/"+notifyMessage)
+      }
     }
     const displayComponent = ()=>{
         switch(creatorPage){
