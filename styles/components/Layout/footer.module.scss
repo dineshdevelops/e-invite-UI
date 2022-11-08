@@ -1,0 +1,16 @@
+.footer{
+    width: 70%;
+    position:absolute;
+    bottom:0;
+    height:50px;
+    .alikaCredit{
+        text-align: center;
+        font-size: large;
+        .alika{
+            font-weight: 700;
+            font-size: large;
+            letter-spacing: 5px;
+            margin-left: 5px;
+        }
+    }
+}
