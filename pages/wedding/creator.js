@@ -25,7 +25,7 @@ const Creator = () => {
     ];
     // !Wedding Data which has to be passed across Stepper components
     const [weddingData,setWeddingData]=React.useState({
-      userId:localStorage.getItem('userId'),
+      // userId:localStorage.getItem('userId'),
       groomDetails:{
         groomName:"",
         groomDetails:"",
