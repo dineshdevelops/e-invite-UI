@@ -10,16 +10,22 @@ const LoveStory = ({weddingData,setWeddingData}) => {
   }
   return (
     <div className={styles.loveStory}>
+      <div className={styles.top}>
+        <p>{weddingData.brideDetails.brideName}</p>
         <FavoriteSharpIcon className={styles.icon}/>
+        <p>{weddingData.groomDetails.groomName}</p>
+      </div>
+      <div className={styles.bottom}>
         <TextField
-          id="outlined-multiline-static"
-          label="Love Story...."
-          multiline
-          rows={6}
-          sx={{width:'80ch'}}
-          onChange={handleChange}
-          name="loveStory"
-        />
+            id="outlined-multiline-static"
+            label="Love Story...."
+            multiline
+            rows={6}
+            sx={{width:'80ch'}}
+            onChange={handleChange}
+            name="loveStory"
+          />
+      </div>
     </div>
   )
 }
