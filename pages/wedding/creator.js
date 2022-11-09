@@ -43,7 +43,7 @@ const Creator = () => {
     const [creatorPage,setCreatorPage] = React.useState(0);
     const nextPage = ()=>{
         setCreatorPage((currPage)=>creatorPage+1)
-        // console.log(weddingData);
+        console.log(weddingData);
         if(creatorPage===4){
           handleSubmit();
         }

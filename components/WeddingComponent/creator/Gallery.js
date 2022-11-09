@@ -4,6 +4,8 @@ import styles from "../../../styles/components/weddingComponent/creator/gallery.
 import UploadIcon from '@mui/icons-material/Upload';
 import axios from "axios"
 import Image from 'next/Image';
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
 
 const Gallery = ({weddingData,setWeddingData}) => {
   const uploadGallery = async(e)=>{
@@ -17,13 +19,19 @@ const Gallery = ({weddingData,setWeddingData}) => {
       let tempGallery = weddingData.gallery;
       console.log(tempGallery)
       tempGallery.push(res.data.secure_url);
-      console.log(tempGallery)
+      // console.log(tempGallery)
       setWeddingData({...weddingData,gallery:tempGallery});
-      console.log(weddingData)
+      // console.log(weddingData)
     }
     catch(error){
       console.log(error)
     }
+  }
+
+  const removeImage = (imgUrl)=>{
+    //Get the updatedGallery array
+    const updatedGallery  = weddingData.gallery.filter((img)=>img !== imgUrl);
+    setWeddingData({...weddingData,gallery:updatedGallery})
   }
 
   return (
@@ -34,7 +42,12 @@ const Gallery = ({weddingData,setWeddingData}) => {
         </Button>
         <div className={styles.imagePreview}>
           {weddingData.gallery.map((imgUrl,index)=>(
-            <Image src={imgUrl} width='250' height='250' alt="imagePreview" key={index} />
+            <div className={styles.imageTraverse} key={index}>
+             <Image src={imgUrl} width='300' height='300' alt="imagePreview" key={index} />
+             <IconButton aria-label="delete" size="large" onClick={(e)=>removeImage(imgUrl)}>
+                <DeleteIcon fontSize="inherit" color="error"  />
+             </IconButton>
+            </div>
           ))
           }
         </div>

@@ -6,5 +6,9 @@
     .imagePreview{
         display: flex;
         gap: 20px;
+        .imageTraverse{
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
