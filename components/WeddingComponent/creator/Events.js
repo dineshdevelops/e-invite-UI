@@ -3,7 +3,27 @@ import styles from "../../../styles/components/weddingComponent/creator/events.m
 import TextField from '@mui/material/TextField';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
 
+export function EventPreview({eventDetails,weddingData,setWeddingData}) {
+  const removeEvent=(eventName)=>{
+    //Get the updatedGallery array
+    const updatedEvents  = weddingData.events.filter((event)=>event.eventName !== eventName);
+    setWeddingData({...weddingData,events:updatedEvents})
+  }
+  return (
+    <div className={styles.eventPreview}>
+      <span>{eventDetails.eventName}</span>
+      <span>{eventDetails.eventDate}</span>
+      <span>{eventDetails.eventTime}</span>
+      <span>{eventDetails.eventVenue}</span>
+      <IconButton aria-label="delete" size="medium" onClick={(e)=>removeEvent(eventDetails.eventName)}>
+        <DeleteIcon fontSize="inherit" color="error"  />
+      </IconButton>
+    </div>
+  )
+}
 const Events = ({weddingData,setWeddingData}) => {
   const [eventDetails,setEventDetails]=React.useState({
     eventName:"",
@@ -37,6 +57,12 @@ const Events = ({weddingData,setWeddingData}) => {
         <Button variant="contained" endIcon={<AddCircleIcon />} sx={{bgcolor:'#f50057'}} name="events" onClick={addEvent} >
             Add Event
         </Button>
+        <div className={styles.eventsPreview}>
+          {weddingData.events.map((event,index)=>(
+            //Pass the individual events to EventPreview function and weddingData and setWeddingData
+            <EventPreview eventDetails={event} weddingData={weddingData} setWeddingData={setWeddingData} key={index} />
+          ))}
+        </div>
     </div>
   )
 }
