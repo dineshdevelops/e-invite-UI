@@ -28,9 +28,16 @@ const Gallery = ({weddingData,setWeddingData}) => {
     }
   }
 
-  const removeImage = (imgUrl)=>{
+  const removeImage = async(imgUrl)=>{
     //Get the updatedGallery array
     const updatedGallery  = weddingData.gallery.filter((img)=>img !== imgUrl);
+    try {
+      const requestBody = {imgUrl:imgUrl}
+      const res = await axios.post("http://localhost:8083/api/cloudinary/deleteImage",requestBody)
+      console.log("Image Delete API "+res)
+    } catch (error) {
+      console.log(error)
+    }
     setWeddingData({...weddingData,gallery:updatedGallery})
   }
 
