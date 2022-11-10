@@ -36,7 +36,8 @@ const BrideInfo = ({weddingData,setWeddingData}) => {
           Upload Image
           <input hidden accept="image/*" multiple type="file" name="bridePhoto" onChange={uploadBridePhoto} />
         </Button>
-        <TextField id="outlined-basic" label="Bride Name" variant="outlined" name="brideName" onChange={handleChange} />
+        <TextField id="outlined-basic" label="Bride Name" variant="outlined" name="brideName" sx={{ width: '35ch' }} onChange={handleChange} />
+        <TextField id="outlined-basic" label="Bride Profession" variant="outlined" name="brideProfession" sx={{ width: '35ch' }} onChange={handleChange} />
         <TextField
           id="outlined-multiline-static"
           label="About Her"
