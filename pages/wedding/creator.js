@@ -25,7 +25,7 @@ const Creator = () => {
     ];
     // !Wedding Data which has to be passed across Stepper components
     const [weddingData,setWeddingData]=React.useState({
-      // userId:localStorage.getItem('userId'),
+      userId:localStorage.getItem('userId'),
       groomDetails:{
         groomName:"",
         groomDetails:"",
@@ -56,6 +56,7 @@ const Creator = () => {
       console.log(weddingData);
       try {
         const res =  await axios.post('http://localhost:8083/api/wedding/postCreator',weddingData);
+        console.log("Post Creator Response "+res)
         const notifyMessage = res.data.message;
         if(res.status===200){
           router.push("/notify/approve/"+notifyMessage)
@@ -63,7 +64,7 @@ const Creator = () => {
       } catch (error) {
         console.log(error)
         notifyMessage = "Error Try to contact ALIKA";
-      router.push("notify/error/"+notifyMessage)
+        router.push("notify/error/"+notifyMessage)
       }
     }
     const displayComponent = ()=>{

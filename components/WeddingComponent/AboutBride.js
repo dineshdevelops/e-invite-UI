@@ -7,7 +7,7 @@ const AboutBride = ({brideProps}) => {
     <div className={styles.aboutPerson}>
       <p className={styles.personName}>About Ms.{brideProps.brideName}</p>
       <div className={styles.personContent}>
-                <Image src={brideProps.bridePhoto} alt="Bride Image" width="250" height="250"/>
+                <Image src={brideProps.bridePhoto} alt="Bride Image" className={styles.image} width={1000} height={1000} objectFit="cover"/>
                 <p className={styles.personBrief}>
                     {brideProps.brideDetails}
                 </p>
