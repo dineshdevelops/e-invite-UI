@@ -5,6 +5,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
+import EventIcon from '@mui/icons-material/Event';
 
 export function EventPreview({eventDetails,weddingData,setWeddingData}) {
   const removeEvent=(eventName)=>{
@@ -49,6 +50,10 @@ const Events = ({weddingData,setWeddingData}) => {
   }
   return (
     <div className={styles.events}>
+      <div className={styles.title}>
+        Add your Event Plans
+        <EventIcon className={styles.icon} />
+      </div>
         <TextField id="outlined-basic" label="Event Name" variant="outlined" value={eventDetails.eventName} sx={{width:'40ch'}} name="eventName" onChange={handleChange}  />
         <TextField id="date" label="Event Date" type="date" value={eventDetails.eventDate} sx={{ width: '40ch' }}InputLabelProps={{shrink: true,}} name="eventDate" onChange={handleChange} />
         <TextField id="time" label="Event Time" type="time" value={eventDetails.eventTime} inputProps={{step: 300 }} sx={{ width: '40ch' }} name="eventTime" onChange={handleChange} />

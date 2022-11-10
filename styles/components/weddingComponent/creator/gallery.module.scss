@@ -3,6 +3,10 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    .title{
+        font-size: 30px;
+        text-transform: uppercase;
+    }
     .imagePreview{
         display: flex;
         gap: 20px;

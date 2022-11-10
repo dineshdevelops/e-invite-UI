@@ -3,6 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    .title{
+        font-size: 30px;
+        text-transform: uppercase;
+    }
     .top{
         display: flex;
         align-items: center;

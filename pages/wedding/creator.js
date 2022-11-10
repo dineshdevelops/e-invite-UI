@@ -13,6 +13,7 @@ import Gallery from '../../components/WeddingComponent/creator/Gallery';
 import Events from '../../components/WeddingComponent/creator/Events';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import Contact from '../../components/WeddingComponent/creator/Contact';
 
 const Creator = () => {
   const router = useRouter();
@@ -21,7 +22,8 @@ const Creator = () => {
         'Bride Info',
         'Love Story',
         'Gallery',
-        'Events'
+        'Events',
+        'Contact Assistance'
     ];
     // !Wedding Data which has to be passed across Stepper components
     const [weddingData,setWeddingData]=React.useState({
@@ -38,13 +40,17 @@ const Creator = () => {
       },
       loveStory:"",
       gallery:[],
-      events:[]
+      events:[],
+      contactDetails:{
+        contactName:"",
+        contactNumber:""
+      }
     })
     const [creatorPage,setCreatorPage] = React.useState(0);
     const nextPage = ()=>{
         setCreatorPage((currPage)=>creatorPage+1)
         console.log(weddingData);
-        if(creatorPage===4){
+        if(creatorPage===5){
           handleSubmit();
         }
     }
@@ -79,6 +85,8 @@ const Creator = () => {
                 return(<Gallery weddingData={weddingData} setWeddingData={setWeddingData} />)
             case 4:
                 return(<Events weddingData={weddingData} setWeddingData={setWeddingData} />)
+            case 5:
+                return(<Contact weddingData={weddingData} setWeddingData={setWeddingData} />)
         }
     }
     React.useEffect(()=>{
@@ -105,7 +113,7 @@ const Creator = () => {
         <Button variant="contained" disabled={creatorPage == 0} sx={{bgcolor:'#f50057'}} startIcon={<ArrowBackIcon />} onClick={previousPage}>
             Previous
         </Button>
-        <Button variant="contained" disabled={creatorPage == 5} sx={{bgcolor:'#f50057'}} endIcon={<ArrowForwardIcon />} onClick={nextPage}>
+        <Button variant="contained" disabled={creatorPage == 6} sx={{bgcolor:'#f50057'}} endIcon={<ArrowForwardIcon />} onClick={nextPage}>
             Next
         </Button>
       </div>

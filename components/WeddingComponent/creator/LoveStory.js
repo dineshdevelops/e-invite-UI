@@ -10,6 +10,9 @@ const LoveStory = ({weddingData,setWeddingData}) => {
   }
   return (
     <div className={styles.loveStory}>
+      <div className={styles.title}>
+        Share your Love Story 
+      </div>
       <div className={styles.top}>
         <p>{weddingData.brideDetails.brideName}</p>
         <FavoriteSharpIcon className={styles.icon}/>

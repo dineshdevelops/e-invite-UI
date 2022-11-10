@@ -43,6 +43,9 @@ const Gallery = ({weddingData,setWeddingData}) => {
 
   return (
     <div className={styles.gallery}>
+      <div className={styles.title}>
+        Upload your photo-shoots
+      </div>
          <Button variant="contained" component="label" endIcon={<UploadIcon />} name="galleryPhoto"  sx={{bgcolor:'#f50057'}}>
           Upload Image
           <input hidden accept="image/*" multiple type="file" name="galleryPhoto" onChange={uploadGallery} />
