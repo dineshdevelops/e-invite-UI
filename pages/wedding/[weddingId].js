@@ -36,7 +36,7 @@ const PersonalWeddingInvite = ({weddingData}) => {
                 </div>
             </div>
         <div className={styles.utility}>
-           <Utility />
+           <Utility weddingData={weddingData} />
         </div>
     </div>
   )
