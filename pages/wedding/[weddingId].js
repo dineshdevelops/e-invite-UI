@@ -8,6 +8,7 @@ import Events from '../../components/WeddingComponent/Events';
 import Utility from '../../components/WeddingComponent/Utility'
 import axios from 'axios'
 import AboutBride from '../../components/WeddingComponent/AboutBride'
+import Contact from '../../components/WeddingComponent/Contact'
 const PersonalWeddingInvite = ({weddingData}) => {
     const router = useRouter();
     const {weddingId} = router.query;
@@ -34,7 +35,10 @@ const PersonalWeddingInvite = ({weddingData}) => {
                         return(<Events eventProps={event} key={index} />)
                     })}
                 </div>
-            </div>
+        </div>
+        <div className={styles.contact}>
+            <Contact weddingData={weddingData} />
+        </div>
         <div className={styles.utility}>
            <Utility weddingData={weddingData} />
         </div>

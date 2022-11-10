@@ -1,8 +1,8 @@
-.events{
+.contact{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     .title{
         display: flex;
         flex-direction: column;
@@ -12,22 +12,12 @@
         text-transform: uppercase;
         .icon{
             font-size: 50px;
-            color: #229954;
+            color: #2980B9;
         }
     }
-    .eventsPreview{
+    .contactForm{
         display: flex;
+        flex-direction: column;
         gap: 25px;
-        span{
-            font-size: large;
-        }
     }
-}
-.eventPreview{
-    display: flex;
-    flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 10px 25px;
-    border-radius: 10px;
-    margin-top: 20px;
 }

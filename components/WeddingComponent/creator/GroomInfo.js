@@ -37,6 +37,9 @@ const GroomInfo = ({weddingData,setWeddingData}) => {
   }
   return (
     <div className={styles.groomInfo}>
+      <div className={styles.title}>
+        Groom Information 
+      </div>
         <Image src={weddingData.groomDetails.groomPhoto} width='150' height='150' alt="profileImage"  />
         <Button variant="contained" component="label" endIcon={<PhotoCameraIcon />} name="groomPhoto"  sx={{bgcolor:'#f50057'}}>
           Upload Image
