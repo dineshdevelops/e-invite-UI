@@ -18,6 +18,12 @@
             .personBrief{
                 font-family: 'Scope One', serif;
                 font-size: 20px;
+                .profession{
+                    margin-top: 10px;
+                    .professionTitle{
+                        font-size: 15px;
+                    }
+                }
             }
         }
     }
