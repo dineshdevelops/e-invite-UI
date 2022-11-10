@@ -7,7 +7,7 @@ const AboutGroom = ({groomProps}) => {
     <div className={styles.aboutPerson}>
       <p className={styles.personName}>About Mr.{groomProps.groomName}</p>
       <div className={styles.personContent}>
-                <Image src={groomProps.groomPhoto} alt="Groom Image" width='250' height='250'/>
+                <Image src={groomProps.groomPhoto} alt="Groom Image" className={styles.image} width={1000} height={1000} objectFit="cover" />
                 <p className={styles.personBrief}>
                   {groomProps.groomDetails}
                 </p>

@@ -9,9 +9,12 @@
         }
         .personContent{
             display: flex;
-            gap: 10px;
+            gap: 25px;
             align-items: center;
             justify-content: center;
+            .image{
+                border-radius: 15px;
+            }
             .personBrief{
                 font-family: 'Scope One', serif;
                 font-size: 20px;
