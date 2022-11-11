@@ -1,19 +1,60 @@
+@import "mixins";
 .events{
    display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   gap: 10px;
-   font-family: 'Changa', sans-serif;
-   font-size: 20px;
+   justify-content: space-between;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border-radius: 10px;
+   align-items: center;
    .eventDetails{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-   }
-   .addToCalendar{
-      display: flex;
-      gap: 2px;
-      font-size: 20px;
+      width: 350px;
+      padding: 10px;
+      margin: 10px;
+      text-transform: capitalize;
+      .eventName{
+         font-size: 35px;
+         font-family: 'Fondamento', cursive;
+         color: #eb0500;
+      }
+      .date,.time{
+         font-size: 20px;
+         font-family: 'Orbitron', sans-serif;
+      }
+      .venue{
+         font-size: 30px;
+      }
+      @include mobile{
+         width: 250px;
+         .eventName{
+            font-size: 25px;
+         }
+         .date,.time{
+            font-size: 20px;
+         }
+         .venue{
+            font-size: 20px;
+         }
+      }
    }
 }
+
+
+// .events{
+//    display: flex;
+//    flex-direction: row;
+//    align-items: center;
+//    font-family: 'Changa', sans-serif;
+//    justify-content: space-between;
+//    font-size: 20px;
+//    border: 2px solid red;
+//    .eventDetails{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     gap: 5px;
+//    }
+//    .addToCalendar{
+//       display: flex;
+//       gap: 2px;
+//       font-size: 20px;
+//    }
+// }

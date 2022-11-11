@@ -3,7 +3,8 @@ import React from 'react'
 import styles from "../../styles/components/weddingComponent/events.module.scss";
 import IconButton from '@mui/material/IconButton';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
-
+import EventIcon from '@mui/icons-material/Event';
+import { fontSize } from '@mui/system';
 const Events = ({eventProps}) => {
   // console.log("Events Props"+eventProps)
   const handleCalendarClick = ()=>{
@@ -11,20 +12,15 @@ const Events = ({eventProps}) => {
   }
   return (
         <div className={styles.events}>
-                <div className={styles.eventDetails}>
-                    <div className={styles.eventName}>Event Name:{eventProps.eventName}</div>
-                    <div className={styles.date}>Event Date:{eventProps.eventDate}</div>
-                    <div className={styles.venue}>Event Venue:{eventProps.eventVenue}</div>
-                    <div className={styles.time}>Event Time:{eventProps.eventTime}</div>
-                    <div className={styles.map}>Map: <Link href='https://goo.gl/maps/Zvo686gFKGaAumke8'>Click Here</Link></div>
-                </div>
-                {/* //! Add to Calendar */}
-                {/* <div className={styles.addToCalendar} onClick={handleCalendarClick}  >
-                  <IconButton color="primary" aria-label="add to shopping cart">
-                    <EventAvailableIcon fontSize='large' />
-                  </IconButton>
-                  <p>Add to Calendar</p>
-                </div> */}
+          <div>
+            <EventIcon sx={{fontSize:50}} className={styles.icon} color={'primary'} />
+          </div>
+          <div className={styles.eventDetails}>
+            <div className={styles.eventName}>{eventProps.eventName}</div>
+            <div className={styles.date}>{eventProps.eventDate}</div>
+            <div className={styles.time}>{eventProps.eventTime}</div>
+            <div className={styles.venue}>{eventProps.eventVenue}</div>
+          </div>
         </div>
   )
 }
