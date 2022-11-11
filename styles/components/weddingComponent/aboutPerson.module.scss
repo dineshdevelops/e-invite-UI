@@ -1,3 +1,4 @@
+@import "mixins";
 .aboutPerson{
         display: flex;
         flex-direction: column;
@@ -13,7 +14,7 @@
             align-items: center;
             justify-content: center;
             .image{
-                border-radius: 15px;
+                border-radius: 10px;
             }
             .personBrief{
                 font-family: 'Scope One', serif;
@@ -23,6 +24,14 @@
                     .professionTitle{
                         font-size: 15px;
                     }
+                }
+            }
+            @include mobile{
+                flex-direction: column;
+                .personBrief{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
             }
         }

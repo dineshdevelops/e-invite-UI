@@ -1,3 +1,4 @@
+@import "mixins";
 .contact{
     display: flex;
     flex-direction: column;
@@ -8,5 +9,10 @@
     .callStack{
         display: flex;
         gap: 10px;
+    }
+    @include mobile{
+        p{
+            text-align: center;
+        }
     }
 }

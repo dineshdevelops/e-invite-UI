@@ -1,10 +1,16 @@
+@import "mixins";
 .gallery{
     .galleryImages{
         display: flex;
         gap: 25px;
         padding: 20px;
         .image{
-            border-radius: 15px;
+            border-radius: 10px;
+        }
+    }
+    @include mobile{
+        .galleryImages{
+        flex-direction: column;
         }
     }
 }
