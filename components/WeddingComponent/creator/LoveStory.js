@@ -24,7 +24,7 @@ const LoveStory = ({weddingData,setWeddingData}) => {
             label="Love Story...."
             multiline
             rows={6}
-            sx={{width:'80ch'}}
+            sx={{ width: {xs:'40ch',md:'80ch'} }}
             onChange={handleChange}
             name="loveStory"
           />
