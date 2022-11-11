@@ -15,10 +15,10 @@ export function EventPreview({eventDetails,weddingData,setWeddingData}) {
   }
   return (
     <div className={styles.eventPreview}>
-      <span>{eventDetails.eventName}</span>
-      <span>{eventDetails.eventDate}</span>
-      <span>{eventDetails.eventTime}</span>
-      <span>{eventDetails.eventVenue}</span>
+      <span>Event Name: {eventDetails.eventName}</span>
+      <span>Event Date: {eventDetails.eventDate}</span>
+      <span>Event Time: {eventDetails.eventTime}</span>
+      <span>Event Venue: {eventDetails.eventVenue}</span>
       <IconButton aria-label="delete" size="medium" onClick={(e)=>removeEvent(eventDetails.eventName)}>
         <DeleteIcon fontSize="inherit" color="error"  />
       </IconButton>
