@@ -69,8 +69,8 @@ const Creator = () => {
         }
       } catch (error) {
         console.log(error)
-        notifyMessage = "Error Try to contact ALIKA";
-        router.push("notify/error/"+notifyMessage)
+        const notifyMessage = "Error Try to contact DINESH";
+        router.push("/notify/error/"+notifyMessage)
       }
     }
     const displayComponent = ()=>{
