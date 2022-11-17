@@ -39,6 +39,7 @@ const Events = ({weddingData,setWeddingData}) => {
   }
   const addEvent=()=>{
     weddingData.events.push(eventDetails);
+    //Resetting event form after array push
     setEventDetails({
       eventName:"",
       eventDate:"1999-09-16",

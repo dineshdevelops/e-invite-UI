@@ -1,0 +1,19 @@
+.heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:35px;
+    text-transform: uppercase;
+    gap: 20px;
+    .request{
+        color: #CC0000;
+    }
+    .title{
+        font-family: Trebuchet MS;
+        font-size: 40px;
+        letter-spacing: 5px;
+        color: #1917af;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

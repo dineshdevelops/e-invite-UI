@@ -1,0 +1,13 @@
+.host{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title{
+        font-family: 'Kalam', cursive;
+        font-size: 50px;
+    }
+    .hostNames{
+        font-family: 'Courgette', cursive;
+        font-size: 30px;
+    }
+}
