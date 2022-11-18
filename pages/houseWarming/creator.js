@@ -4,13 +4,14 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-import HostDetails from '../../components/HouseWarmingComponent/creator/HostDetails';
-import InviteMessage from '../../components/HouseWarmingComponent/creator/InviteMessage';
 import styles from "../../styles/pages/houseWarming/creator.module.scss";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Gallery from '../../components/WeddingComponent/creator/Gallery';
-import Events from '../../components/WeddingComponent/creator/Events';
+import Gallery from '../../components/creator/gallery';
+import Events from '../../components/creator/Events';
+import InviteMessage from '../../components/creator/InviteMessage';
+import HostDetails from '../../components/creator/HostDetails';
+import axios from 'axios';
 
 const Creator = () => {
   const router =useRouter();
@@ -27,11 +28,26 @@ const Creator = () => {
     events:[]
   });
   const [creatorPage,setCreatorPage]=React.useState(0);
+  const handleSubmit=async()=>{
+    try {
+      const res =  await axios.post('http://localhost:8083/api/houseWarming/postCreator',houseWarmingData);
+      console.log("Post Creator Response "+res)
+      const notifyMessage = res.data.message;
+      if(res.status===200){
+        router.push("/notify/approve/"+notifyMessage)
+      }
+    } catch (error) {
+      console.log(error)
+      const notifyMessage = "Error Try to contact DINESH";
+      router.push("/notify/error/"+notifyMessage)
+    }
+  }
   const nextPage = ()=>{
     setCreatorPage((currPage)=>creatorPage+1)
+    console.log(creatorPage);
     console.log(houseWarmingData);
-    if(creatorPage===5){
-      // handleSubmit();
+    if(creatorPage===3){
+      handleSubmit();
     }
   }
   const previousPage=()=>{
@@ -41,13 +57,13 @@ const Creator = () => {
   const displayComponent = ()=>{
     switch(creatorPage){
       case 0:
-        return(<InviteMessage houseWarmingData={houseWarmingData} setHouseWarmingData={setHouseWarmingData}/>)
+        return(<InviteMessage invitationData={houseWarmingData} setInvitationData={setHouseWarmingData}/>)
       case 1:
-        return(<HostDetails houseWarmingData={houseWarmingData} setHouseWarmingData={setHouseWarmingData} />)
-      // case 2:
-      //   return(<Gallery />)
-      // case 3:
-      //   return(<Events />)
+        return(<HostDetails invitationData={houseWarmingData} setInvitationData={setHouseWarmingData} />)
+      case 2:
+        return(<Gallery invitationData={houseWarmingData} setInvitationData={setHouseWarmingData}/>)
+      case 3:
+        return(<Events invitationData={houseWarmingData} setInvitationData={setHouseWarmingData}/>)
     }
   }
   return (
@@ -66,7 +82,7 @@ const Creator = () => {
         <Button variant="contained" disabled={creatorPage == 0} sx={{bgcolor:'#f50057'}} startIcon={<ArrowBackIcon />} onClick={previousPage}>
             Previous
         </Button>
-        <Button variant="contained" disabled={creatorPage == 6} sx={{bgcolor:'#f50057'}} endIcon={<ArrowForwardIcon />} onClick={nextPage}>
+        <Button variant="contained" disabled={creatorPage == 4} sx={{bgcolor:'#f50057'}} endIcon={<ArrowForwardIcon />} onClick={nextPage}>
             Next
         </Button>
       </div>
