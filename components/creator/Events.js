@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../../../styles/components/weddingComponent/creator/events.module.scss"
+import styles from "../../styles/components/weddingComponent/creator/events.module.scss"
 import TextField from '@mui/material/TextField';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Button from '@mui/material/Button';
@@ -7,11 +7,11 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import EventIcon from '@mui/icons-material/Event';
 
-export function EventPreview({eventDetails,weddingData,setWeddingData}) {
+export function EventPreview({eventDetails,invitationData,setInvitationData}) {
   const removeEvent=(eventName)=>{
     //Get the updatedGallery array
-    const updatedEvents  = weddingData.events.filter((event)=>event.eventName !== eventName);
-    setWeddingData({...weddingData,events:updatedEvents})
+    const updatedEvents  = invitationData.events.filter((event)=>event.eventName !== eventName);
+    setInvitationData({...invitationData,events:updatedEvents})
   }
   return (
     <div className={styles.eventPreview}>
@@ -25,7 +25,7 @@ export function EventPreview({eventDetails,weddingData,setWeddingData}) {
     </div>
   )
 }
-const Events = ({weddingData,setWeddingData}) => {
+const Events = ({invitationData,setInvitationData}) => {
   const [eventDetails,setEventDetails]=React.useState({
     eventName:"",
     eventDate:"1999-09-16",
@@ -38,7 +38,7 @@ const Events = ({weddingData,setWeddingData}) => {
     setEventDetails({...eventDetails,[name]:value});
   }
   const addEvent=()=>{
-    weddingData.events.push(eventDetails);
+    invitationData.events.push(eventDetails);
     //Resetting event form after array push
     setEventDetails({
       eventName:"",
@@ -47,7 +47,7 @@ const Events = ({weddingData,setWeddingData}) => {
       eventVenue:"",
       eventMapLink:""
     });
-    console.log(weddingData)
+    console.log(invitationData)
   }
   return (
     <div className={styles.events}>
@@ -64,9 +64,9 @@ const Events = ({weddingData,setWeddingData}) => {
             Add Event
         </Button>
         <div className={styles.eventsPreview}>
-          {weddingData.events.map((event,index)=>(
+          {invitationData.events.map((event,index)=>(
             //Pass the individual events to EventPreview function and weddingData and setWeddingData
-            <EventPreview eventDetails={event} weddingData={weddingData} setWeddingData={setWeddingData} key={index} />
+            <EventPreview eventDetails={event} invitationData={invitationData} setInvitationData={setInvitationData} key={index} />
           ))}
         </div>
     </div>

@@ -1,0 +1,12 @@
+.creator{
+    display: flex;
+    flex-direction: column;
+    .navigator{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        padding: 20px 0;
+        justify-content: center;
+        margin-bottom: 100px;
+    }
+}
