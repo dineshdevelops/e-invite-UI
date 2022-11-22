@@ -1,8 +1,20 @@
+@import "mixins";
 .houseWarmingInvite{
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: center;
     .houseImage{
+    }
+    .title{
+        font-size: 40px;
+        font-family: 'Fondamento', cursive;
+    }
+    @include mobile{
+        gap: 20px;
+        .title{
+            font-size: 25px;
+            text-align: center;
+        }
     }
 }

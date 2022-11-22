@@ -2,31 +2,56 @@ import Image from 'next/Image';
 import { useRouter } from 'next/router'
 import React from 'react'
 import Heading from '../../components/HouseWarmingComponent/Heading';
-import Host from '../../components/HouseWarmingComponent/Host';
-import RandomLines from '../../components/HouseWarmingComponent/InviteMessage';
+import InviteMessage from '../../components/HouseWarmingComponent/InviteMessage';
 import VideoInvite from '../../components/HouseWarmingComponent/VideoInvite';
+import Events from '../../components/invitation/Events';
+import Gallery from '../../components/invitation/Gallery';
+import Host from '../../components/invitation/Host';
 import styles from "../../styles/pages/houseWarming/houseWarming.module.scss"
-const PersonalHouseWarmingInvite = () => {
+const PersonalHouseWarmingInvite = ({houseWarmingData}) => {
     const router =useRouter();
-    const {houseWarmingId}= router.query;
+    const {inviteMessage,hostDetails,gallery,events} = houseWarmingData;
   return (
     <div className={styles.houseWarmingInvite}>
         {/* House Warming Heading */}
         <Heading />
         {/* Random Invitation Lines */}
-        <RandomLines />
+        <InviteMessage inviteMessage={inviteMessage} />
         {/* Constant House Warming Image */}
         <div className={styles.houseImage}>
             <Image src="https://res.cloudinary.com/dln6m1ts5/image/upload/v1668333106/HouseWarming/Defaults/houseWarming_qle1xc.png" width={350} height={300} alt="HouseWarming" />
         </div>
         {/* Hosted By 2 names */}
-        <Host />
+        <div className={styles.title}>
+          The HouseWarming function is hosted by 🎤
+        </div>
+        <Host hostProps={hostDetails}/>
         {/* Video Invite */}
         <VideoInvite />
         {/* Photos */}
+        <div className={styles.title}>
+          Check Out the Gallery 📸
+        </div>
+        <Gallery galleryProps={gallery}/>
         {/* Events */}
+        <div className={styles.title}>
+          Events 📆
+        </div>
+        <Events events={events}/>
     </div>
   )
 }
+
+// *Get Dynamic Data from API
+export async function getServerSideProps(context){
+  const {houseWarmingId} = context.query
+  console.log(context.query)
+  const response = await fetch('http://localhost:8083/api/houseWarming/getHouseWarmingData/?id='+houseWarmingId);
+  console.log(response)
+  const houseWarmingData = await response.json()
+  // Pass data to the page via props
+  return { props: { houseWarmingData } }
+}
+
 
 export default PersonalHouseWarmingInvite

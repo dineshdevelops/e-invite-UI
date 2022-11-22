@@ -1,0 +1,18 @@
+@import "mixins";
+.events{
+    display: flex;
+    gap: 20px;
+    @include mobile{
+        flex-direction: column;
+    }
+}
+.eventsPreviewCard{
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 8px;
+    padding: 30px;
+    border-radius: 10px;
+    gap: 50px;
+    .right{
+        font-size: 20px;
+    }
+}
