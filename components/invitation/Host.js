@@ -15,10 +15,11 @@ export function HostCard({hostDetails}){
             </div>
             <div className={styles.job}>
               {
-                hostDetails.hostJob && 
-                <div><WorkIcon fontSize='medium' style={{color:"brown"}} />
+                hostDetails.hostJob &&
+                <>
+                  <WorkIcon fontSize='medium' style={{color:"brown"}} />
                   {hostDetails.hostJob}
-                </div>
+                </>
               }
             </div>
         </div>

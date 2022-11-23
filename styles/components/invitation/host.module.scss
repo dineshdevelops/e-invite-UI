@@ -11,22 +11,23 @@
 .hostCard{
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 30px;
-    // width: 100%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 8px;
     border-radius: 10px;
+    border: 2px solid navy;
     .name{
         font-family: 'Changa', sans-serif;
         font-size:x-large;
+        text-align: center;
     }
-    .qualification,.job{
+    .qualification, .job{
         display: flex;
         gap: 10px;
         font-family: 'Scope One', serif;
         font-weight:bold;
         font-size: large;
     }
+    
     @include mobile{
         padding: 20px 100px;     
     }

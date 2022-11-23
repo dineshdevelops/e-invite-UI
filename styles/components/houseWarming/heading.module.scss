@@ -18,6 +18,12 @@
         font-weight: bold;
         text-transform: uppercase;
     }
+    .name{
+        font-family: 'Fondamento', cursive;
+        font-size: 15px;
+        letter-spacing: 5px;
+        color: red;
+    }
     @include mobile{
         font-size: 25px;
         .title{

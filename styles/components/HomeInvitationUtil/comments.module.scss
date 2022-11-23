@@ -1,0 +1,19 @@
+.comments{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .top{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 30px;
+        font-family: 'Courgette', cursive;
+    }
+}
+.commentCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300;
+    border: 2px solid red;
+}

@@ -14,13 +14,14 @@ const PersonalHouseWarmingInvite = ({houseWarmingData}) => {
   return (
     <div className={styles.houseWarmingInvite}>
         {/* House Warming Heading */}
-        <Heading />
+        <Heading hostDetails={hostDetails} />
         {/* Random Invitation Lines */}
         <InviteMessage inviteMessage={inviteMessage} />
         {/* Constant House Warming Image */}
         <div className={styles.houseImage}>
             <Image src="https://res.cloudinary.com/dln6m1ts5/image/upload/v1668333106/HouseWarming/Defaults/houseWarming_qle1xc.png" width={350} height={300} alt="HouseWarming" />
         </div>
+        <InviteMessage inviteMessage={"Please grace the Occasion with your presence with you and your family blessings"} />
         {/* Hosted By 2 names */}
         <div className={styles.title}>
           The HouseWarming function is hosted by 🎤
