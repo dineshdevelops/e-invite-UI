@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import Heading from '../../components/HouseWarmingComponent/Heading';
 import InviteMessage from '../../components/HouseWarmingComponent/InviteMessage';
-import VideoInvite from '../../components/HouseWarmingComponent/VideoInvite';
+import VideoInvite from '../../components/invitation/VideoInvite';
 import Events from '../../components/invitation/Events';
 import Gallery from '../../components/invitation/Gallery';
 import Host from '../../components/invitation/Host';

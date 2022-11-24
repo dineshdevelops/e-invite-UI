@@ -12,6 +12,7 @@ import Events from '../../components/creator/Events';
 import InviteMessage from '../../components/creator/InviteMessage';
 import HostDetails from '../../components/creator/HostDetails';
 import axios from 'axios';
+import VideoInvite from '../../components/creator/VideoInvite';
 
 const Creator = () => {
   const router =useRouter();
@@ -19,6 +20,7 @@ const Creator = () => {
     'InviteMessage',
     'Host Details',
     'Gallery',
+    'Video Invite',
     'Events'
   ];
   const [houseWarmingData,setHouseWarmingData]=React.useState({
@@ -63,6 +65,8 @@ const Creator = () => {
       case 2:
         return(<Gallery invitationData={houseWarmingData} setInvitationData={setHouseWarmingData}/>)
       case 3:
+        return(<VideoInvite invitationData={houseWarmingData} setInvitationData={setHouseWarmingData}/>)
+      case 4:
         return(<Events invitationData={houseWarmingData} setInvitationData={setHouseWarmingData}/>)
     }
   }
@@ -82,7 +86,7 @@ const Creator = () => {
         <Button variant="contained" disabled={creatorPage == 0} sx={{bgcolor:'#f50057'}} startIcon={<ArrowBackIcon />} onClick={previousPage}>
             Previous
         </Button>
-        <Button variant="contained" disabled={creatorPage == 4} sx={{bgcolor:'#f50057'}} endIcon={<ArrowForwardIcon />} onClick={nextPage}>
+        <Button variant="contained" disabled={creatorPage == 5} sx={{bgcolor:'#f50057'}} endIcon={<ArrowForwardIcon />} onClick={nextPage}>
             Next
         </Button>
       </div>
