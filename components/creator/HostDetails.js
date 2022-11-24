@@ -10,7 +10,7 @@ import IconButton from '@mui/material/IconButton';
 export function HostPreview({invitationData,setInvitationData,hostDetail}){
   const removeHost=(hostName)=>{
     //Get the updatedHost array
-    const updatedHostDetails  = houseWarmingData.hostDetails.filter((host)=>host.hostName !== hostName);
+    const updatedHostDetails  = invitationData.hostDetails.filter((host)=>host.hostName !== hostName);
     setInvitationData({...invitationData,hostDetails:updatedHostDetails})
   }
   return(

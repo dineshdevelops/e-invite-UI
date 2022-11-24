@@ -1,8 +1,10 @@
+@import "mixins";
 .heading{
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size:35px;
+    text-align: center;
     text-transform: uppercase;
     gap: 20px;
     .request{
@@ -15,5 +17,17 @@
         color: #1917af;
         font-weight: bold;
         text-transform: uppercase;
+    }
+    .name{
+        font-family: 'Fondamento', cursive;
+        font-size: 15px;
+        letter-spacing: 5px;
+        color: red;
+    }
+    @include mobile{
+        font-size: 25px;
+        .title{
+            font-size: 25px;
+        }
     }
 }
