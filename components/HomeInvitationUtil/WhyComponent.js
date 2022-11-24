@@ -25,7 +25,7 @@ const WhyComponent = () => {
           ))}
         </div>
         <div className={styles.image}>
-          <Image src="https://res.cloudinary.com/dln6m1ts5/image/upload/v1669123795/DummyImage/question_jouirt.png" width={250} height={250} alt="whyImage" />
+          <Image src="https://res.cloudinary.com/dln6m1ts5/image/upload/v1669123795/DummyImage/question_jouirt.png" width={200} height={200} alt="whyImage" />
         </div>
       </div>
     </div>

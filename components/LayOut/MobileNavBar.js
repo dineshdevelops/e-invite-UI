@@ -9,9 +9,9 @@ const MobileNavBar = () => {
       {/* Contact Us */}
       <CallIcon fontSize='large' />
       {/* Logo */}
-      <Image src="https://res.cloudinary.com/dln6m1ts5/image/upload/v1667814762/MarriageInvite/CommonAssets/dummyLogo_cjxdbg.png" alt="logo" 
-          width={50}
-          height={50}/>
+      <Image src="https://res.cloudinary.com/dln6m1ts5/image/upload/v1669222892/DummyImage/i-invite-1-transparent_pxnvmw.png" alt="logo" 
+          width={80}
+          height={80}/>
       {/* HambergerMenu */}
       <MenuIcon  fontSize='large' />
     </div>
