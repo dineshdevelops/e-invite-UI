@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL:"http://localhost:8083/api"
+    baseURL:"https://i-invite.onrender.com"
 })
 
 export default instance;
