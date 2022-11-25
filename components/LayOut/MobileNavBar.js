@@ -2,7 +2,7 @@ import React from 'react'
 import CallIcon from '@mui/icons-material/Call';
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from "../../styles/components/Layout/mobileNavbar.module.scss"
-import Image from 'next/Image';
+import Image from 'next/image';
 const MobileNavBar = () => {
   return (
     <div className={styles.mobileNavBar}>

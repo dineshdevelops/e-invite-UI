@@ -1,4 +1,4 @@
-import Image from 'next/Image';
+import Image from 'next/image';
 import { useRouter } from 'next/router'
 import React from 'react'
 import Heading from '../../components/HouseWarmingComponent/Heading';
@@ -46,10 +46,8 @@ const PersonalHouseWarmingInvite = ({houseWarmingData}) => {
 // *Get Dynamic Data from API
 export async function getServerSideProps(context){
   const {houseWarmingId} = context.query
-  console.log(context.query)
-  const response = await fetch('http://localhost:8083/api/houseWarming/getHouseWarmingData/?id='+houseWarmingId);
-  console.log(response)
-  const houseWarmingData = await response.json()
+  const {data} = await axios.get(`/houseWarming/getHouseWarmingData/?id=${houseWarmingId}`);
+  const houseWarmingData = data;
   // Pass data to the page via props
   return { props: { houseWarmingData } }
 }

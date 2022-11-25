@@ -11,7 +11,7 @@ const Utility = ({weddingData}) => {
         .share({
           title:`WeddingInvitation from ${weddingData.groomDetails.groomName} and ${weddingData.brideDetails.brideName}`,
           text:`You are personally Invited for the wedding`,
-          url: `http://localhost:3000/wedding/${weddingData._id}`,
+          url: `https://i-invite.vercel.app/wedding/${weddingData._id}`,
         })
         .then(() => {
           console.log('Successfully shared');

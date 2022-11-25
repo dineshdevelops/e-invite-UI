@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "../../styles/components/weddingComponent/gallery.module.scss"
-import Image from 'next/Image';
+import Image from 'next/image';
 
 const Gallery = ({galleryProps}) => {
   // console.log("Gallery Props"+galleryProps)

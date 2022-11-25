@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import styles from "../../styles/components/weddingComponent/creator/gallery.module.scss"
 import UploadIcon from '@mui/icons-material/Upload';
 import axios from "../../config/axios"
-import Image from 'next/Image';
+import Image from 'next/image';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
