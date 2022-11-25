@@ -14,6 +14,7 @@ const Gallery = ({invitationData,setInvitationData}) => {
     const file = e.target.files[0];
     const formData = new FormData();
     formData.append("file",file);
+    formData.append("emailId",invitationData.emailId)
     try{
       const res= await axios.post("http://localhost:8083/api/cloudinary/uploadImage",formData);
       let tempGallery = invitationData.gallery;
