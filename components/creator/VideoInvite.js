@@ -21,6 +21,7 @@ const VideoInvite =({invitationData,setInvitationData}) => {
             //Logic to upload video via NodeJs
             const formData = new FormData();
             formData.append('file',videoBlob)
+            formData.append("emailId",invitationData.emailId)
             const res =await axios.post("http://localhost:8083/api/cloudinary/uploadVideo",formData);
             setInvitationData({...invitationData,["videoInvite"]:res.data.url})
             console.log("VideoUploaded", res);
