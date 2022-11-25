@@ -3,7 +3,7 @@ import styles from "../../styles/components/houseWarming/creator/hostDetails.mod
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import Image from 'next/Image';
+import Image from 'next/image';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 

@@ -1,11 +1,11 @@
-import Image from 'next/Image'
+import Image from 'next/image'
 import React from 'react'
 import styles from "../../../styles/components/weddingComponent/creator/brideInfo.module.scss"
 import nobita from "../../../public/assets/wedding/nobita.jpg"
 import Button from '@mui/material/Button';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import TextField from '@mui/material/TextField';
-import axios from "axios"
+import axios from "../../../config/axios"
 
 const BrideInfo = ({weddingData,setWeddingData}) => {
 
@@ -21,8 +21,9 @@ const BrideInfo = ({weddingData,setWeddingData}) => {
     console.log("Upload Bride Photo")
     const file = e.target.files[0];
     const formData = new FormData();
-    formData.append("photo",file);
-    const res= await axios.post("http://localhost:8083/api/cloudinary/uploadImage",formData);
+    formData.append("file",file);
+    formData.append("emailId",weddingData.emailId);
+    const res= await axios.post("/cloudinary/uploadImage",formData);
     const bridePhotoUrl=res.data.secure_url;
     setWeddingData({...weddingData,brideDetails:{bridePhoto:bridePhotoUrl}});
   }

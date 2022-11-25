@@ -3,7 +3,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import styles from "../../styles/components/HomeInvitationUtil/whyComponent.module.scss"
-import Image from 'next/Image';
+import Image from 'next/image';
 
 const WhyComponent = () => {
   const data = {

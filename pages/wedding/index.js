@@ -4,7 +4,7 @@ import ImageTraverse from '../../components/HomeInvitationUtil/ImageTraverse'
 import WhyComponent from '../../components/HomeInvitationUtil/WhyComponent'
 import Features from '../../components/HomeInvitationUtil/Features'
 import Comments from '../../components/HomeInvitationUtil/Comments'
-import styles from "../../styles/pages/Wedding/homePage.module.scss"
+import styles from "../../styles/pages/wedding/homePage.module.scss"
 
 const Wedding = () => {
   return (

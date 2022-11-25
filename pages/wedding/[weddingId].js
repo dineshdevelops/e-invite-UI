@@ -6,7 +6,7 @@ import LoveStory from '../../components/WeddingComponent/LoveStory'
 import Gallery from '../../components/WeddingComponent/Gallery'
 import Events from '../../components/WeddingComponent/Events';
 import Utility from '../../components/WeddingComponent/Utility'
-import axios from 'axios'
+import axios from "../../config/axios"
 import AboutBride from '../../components/WeddingComponent/AboutBride'
 import Contact from '../../components/WeddingComponent/Contact'
 const PersonalWeddingInvite = ({weddingData}) => {
@@ -47,13 +47,12 @@ const PersonalWeddingInvite = ({weddingData}) => {
 }
 
 // *Get Dynamic Data from API
-export async function getServerSideProps(context){
+export const getServerSideProps = async(context)=>{
     const {weddingId} = context.query
-    const response = await fetch('http://localhost:8083/api/wedding/getWeddingInvitation/?id='+weddingId);
-    console.log(response)
-    const weddingData = await response.json()
-  // Pass data to the page via props
-  return { props: { weddingData } }
+    const {data} = await axios.get(`/wedding/getWeddingInvitation/?id=${weddingId}`);
+    const weddingData=data;
+    return { props: { weddingData} }
 }
+
 
 export default PersonalWeddingInvite

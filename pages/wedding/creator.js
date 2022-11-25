@@ -9,11 +9,11 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import GroomInfo from '../../components/WeddingComponent/creator/GroomInfo';
 import BrideInfo from '../../components/WeddingComponent/creator/BrideInfo';
 import LoveStory from '../../components/WeddingComponent/creator/LoveStory';
-import Gallery from '../../components/creator/Gallery';
 import Events from '../../components/creator/Events';
 import { useRouter } from 'next/router';
 import axios from "../../config/axios";
 import Contact from '../../components/WeddingComponent/creator/Contact';
+import Gallery from '../../components/creator/Gallery';
 import Email from '../../components/creator/Email';
 
 const Creator = () => {

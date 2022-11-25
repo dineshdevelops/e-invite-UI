@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "../../styles/components/weddingComponent/aboutPerson.module.scss"
-import Image from 'next/Image'
+import Image from 'next/image'
 import Chip from '@mui/material/Chip';
 import WorkIcon from '@mui/icons-material/Work';
 

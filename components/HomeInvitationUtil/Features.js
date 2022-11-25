@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../../styles/components/HomeInvitationUtil/features.module.scss";
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import Image from 'next/Image';
+import Image from 'next/image';
 
 export function FeatureCard({feature}){
   return(

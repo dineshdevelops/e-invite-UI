@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import styles from "../../styles/pages/houseWarming/creator.module.scss";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Gallery from '../../components/creator/gallery';
+import Gallery from '../../components/creator/Gallery';
 import Events from '../../components/creator/Events';
 import InviteMessage from '../../components/creator/InviteMessage';
 import HostDetails from '../../components/creator/HostDetails';
