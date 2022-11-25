@@ -12,7 +12,7 @@ import LoveStory from '../../components/WeddingComponent/creator/LoveStory';
 import Gallery from '../../components/creator/Gallery';
 import Events from '../../components/creator/Events';
 import { useRouter } from 'next/router';
-import axios from 'axios';
+import axios from "../../config/axios";
 import Contact from '../../components/WeddingComponent/creator/Contact';
 import Email from '../../components/creator/Email';
 
@@ -64,7 +64,7 @@ const Creator = () => {
     const handleSubmit=async()=>{
       console.log(weddingData);
       try {
-        const res =  await axios.post('http://localhost:8083/api/wedding/postCreator',weddingData);
+        const res =  await axios.post('/wedding/postCreator',weddingData);
         console.log("Post Creator Response "+res)
         const notifyMessage = res.data.message;
         if(res.status===200){

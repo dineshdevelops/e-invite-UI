@@ -11,7 +11,7 @@ import Gallery from '../../components/creator/gallery';
 import Events from '../../components/creator/Events';
 import InviteMessage from '../../components/creator/InviteMessage';
 import HostDetails from '../../components/creator/HostDetails';
-import axios from 'axios';
+import axios from '../../config/axios'
 import VideoInvite from '../../components/creator/VideoInvite';
 import Email from '../../components/creator/Email';
 
@@ -36,7 +36,7 @@ const Creator = () => {
   const handleSubmit=async()=>{
     console.log("Handle Submit Page")
     try {
-      const res =  await axios.post('http://localhost:8083/api/houseWarming/postCreator',houseWarmingData);
+      const res =  await axios.post('/houseWarming/postCreator',houseWarmingData);
       console.log("Post Creator Response "+res)
       const notifyMessage = res.data.message;
       if(res.status===200){

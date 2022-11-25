@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import styles from "../../styles/components/weddingComponent/creator/gallery.module.scss"
 import UploadIcon from '@mui/icons-material/Upload';
-import axios from "axios"
+import axios from "../../config/axios"
 import Image from 'next/Image';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
@@ -16,7 +16,7 @@ const Gallery = ({invitationData,setInvitationData}) => {
     formData.append("file",file);
     formData.append("emailId",invitationData.emailId)
     try{
-      const res= await axios.post("http://localhost:8083/api/cloudinary/uploadImage",formData);
+      const res= await axios.post("/cloudinary/uploadImage",formData);
       let tempGallery = invitationData.gallery;
       console.log(tempGallery)
       tempGallery.push(res.data.secure_url);
@@ -34,7 +34,7 @@ const Gallery = ({invitationData,setInvitationData}) => {
     const updatedGallery  = invitationData.gallery.filter((img)=>img !== imgUrl);
     try {
       const requestBody = {imgUrl:imgUrl}
-      const res = await axios.post("http://localhost:8083/api/cloudinary/deleteImage",requestBody)
+      const res = await axios.post("/cloudinary/deleteImage",requestBody)
       console.log("Image Delete API "+res)
     } catch (error) {
       console.log(error)
