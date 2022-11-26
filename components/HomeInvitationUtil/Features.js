@@ -3,20 +3,20 @@ import styles from "../../styles/components/HomeInvitationUtil/features.module.s
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import Image from 'next/image';
 
-export function FeatureCard({feature}){
+export function FeatureCard({featureData}){
   return(
     <div className={styles.featureCard}>
       <div className={styles.image}>
-        <Image src={feature.image} className={styles.image} width={1500} height={1500} alt="HelpText" />
+        <Image src={featureData.featurePhoto} className={styles.image} width={1500} height={1500} alt="HelpText" />
       </div>
       <div className={styles.featureText}>
-        {feature.content}
+        {featureData.featureText}
       </div>
     </div>
   )
 }
 
-const Features = () => {
+const Features = ({features}) => {
   const data = [
     {
       image:"https://res.cloudinary.com/dln6m1ts5/image/upload/v1669125375/DummyImage/carousel3_f6df14.jpg",
@@ -39,8 +39,8 @@ const Features = () => {
       </div>
       <div className={styles.bottom}>
         {
-          data.map((feature,index)=>(
-            <FeatureCard feature={feature} key={index} />
+          features.map((feature,index)=>(
+            <FeatureCard featureData={feature} key={index} />
           ))
         }
       </div>
