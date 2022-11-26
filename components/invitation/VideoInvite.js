@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "../../styles/components/invitation/videoInvite.module.scss";
 import ReactPlayer from 'react-player';
 
-const VideoInvite = () => {
+const VideoInvite = ({videoSrc}) => {
   const videoEl = React.useRef(null);
   const attemptPlay = () => {
     videoEl &&
@@ -27,7 +27,7 @@ const VideoInvite = () => {
           controlsList="nodownload"
           autoPlay
           alt="All the devices"
-          src="https://res.cloudinary.com/dln6m1ts5/video/upload/v1669290402/video/VIKRAM_%EF%B8%8F_%EF%B8%8F__SANTHANAM_%EF%B8%8F_%EF%B8%8F__WHATSAPP_%EF%B8%8F_%EF%B8%8F__STATUS_%EF%B8%8F_%EF%B8%8F__TAMIL_%EF%B8%8F_%EF%B8%8F__i2cifu.mp4"
+          src={videoSrc}
           ref={videoEl}
         />
     </div>

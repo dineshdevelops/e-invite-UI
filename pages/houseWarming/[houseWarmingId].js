@@ -7,10 +7,12 @@ import VideoInvite from '../../components/invitation/VideoInvite';
 import Events from '../../components/invitation/Events';
 import Gallery from '../../components/invitation/Gallery';
 import Host from '../../components/invitation/Host';
-import styles from "../../styles/pages/houseWarming/houseWarming.module.scss"
+import styles from "../../styles/pages/houseWarming/houseWarming.module.scss";
+import axios from "../../config/axios";
+
 const PersonalHouseWarmingInvite = ({houseWarmingData}) => {
     const router =useRouter();
-    const {inviteMessage,hostDetails,gallery,events} = houseWarmingData;
+    const {inviteMessage,hostDetails,gallery,videoInvite,events} = houseWarmingData;
   return (
     <div className={styles.houseWarmingInvite}>
         {/* House Warming Heading */}
@@ -28,7 +30,7 @@ const PersonalHouseWarmingInvite = ({houseWarmingData}) => {
         </div>
         <Host hostProps={hostDetails}/>
         {/* Video Invite */}
-        <VideoInvite />
+        <VideoInvite videoSrc={videoInvite} />
         {/* Photos */}
         <div className={styles.title}>
           Check Out the Gallery 📸

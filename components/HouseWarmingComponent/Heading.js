@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "../../styles/components/houseWarming/heading.module.scss"
 const Heading = ({hostDetails}) => {
   const name1 = hostDetails[0].hostName;
-  const name2 = hostDetails[1] ? hostDetails[1].name :null;
+  const name2 = hostDetails[1] ? hostDetails[1].hostName :null;
 
   return (
     <div className={styles.heading}>

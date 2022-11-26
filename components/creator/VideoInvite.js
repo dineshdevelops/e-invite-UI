@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../../styles/components/creator/videoInvite.module.scss";
 import VideoRecorder from "react-video-recorder";
-import axios from "axios"
+import axios from "../../config/axios"
 
 const VideoInvite =({invitationData,setInvitationData}) => {
     const [videoUrl,setVideoUrl] = React.useState("")
@@ -22,7 +22,7 @@ const VideoInvite =({invitationData,setInvitationData}) => {
             const formData = new FormData();
             formData.append('file',videoBlob)
             formData.append("emailId",invitationData.emailId)
-            const res =await axios.post("http://localhost:8083/api/cloudinary/uploadVideo",formData);
+            const res =await axios.post("/cloudinary/uploadVideo",formData);
             setInvitationData({...invitationData,["videoInvite"]:res.data.url})
             console.log("VideoUploaded", res);
           }}
