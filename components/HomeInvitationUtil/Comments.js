@@ -5,19 +5,20 @@ import Avatar from '@mui/material/Avatar';
 import { deepOrange } from '@mui/material/colors';
 import Typography from '@mui/material/Typography';
 
-export function CommentCard(){
+export function CommentCard({commentData}){
+  console.log("Comment Data"+commentData)
   return(
     <div className={styles.commentCard}>
        <Avatar sx={{ bgcolor: deepOrange[500] }}>A</Avatar>
-       <div className={styles.name}>AKILA</div>
+       <div className={styles.name}>{commentData.name}</div>
        <div className={styles.comment}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          {commentData.comment}
        </div>
     </div>
   )
 }
 
-const Comments = () => {
+const Comments = ({comments}) => {
   return (
     <div className={styles.comments}>
       <div className={styles.top}>
@@ -25,8 +26,9 @@ const Comments = () => {
         <QuestionAnswerIcon fontSize='large' />
       </div>
       <div className={styles.bottom}>
-        <CommentCard />
-        <CommentCard />
+        {comments.map((comment,index)=>(
+          <CommentCard commentData={comment} key={index} />
+        ))}
       </div>
     </div>
   )

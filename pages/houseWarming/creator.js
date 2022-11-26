@@ -11,9 +11,9 @@ import Gallery from '../../components/creator/Gallery';
 import Events from '../../components/creator/Events';
 import InviteMessage from '../../components/creator/InviteMessage';
 import HostDetails from '../../components/creator/HostDetails';
-import axios from '../../config/axios'
 import VideoInvite from '../../components/creator/VideoInvite';
 import Email from '../../components/creator/Email';
+import axios from "../../config/axios";
 
 const Creator = () => {
   const router =useRouter();
